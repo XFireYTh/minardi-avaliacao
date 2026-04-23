@@ -1,0 +1,15 @@
+C:\Users\Th\source\repos\CsharpOutros\sistemaBatalha\bin\Debug\net10.0\sistemaBatalha.exe
+C:\Users\Th\source\repos\CsharpOutros\sistemaBatalha\bin\Debug\net10.0\sistemaBatalha.deps.json
+C:\Users\Th\source\repos\CsharpOutros\sistemaBatalha\bin\Debug\net10.0\sistemaBatalha.runtimeconfig.json
+C:\Users\Th\source\repos\CsharpOutros\sistemaBatalha\bin\Debug\net10.0\sistemaBatalha.dll
+C:\Users\Th\source\repos\CsharpOutros\sistemaBatalha\bin\Debug\net10.0\sistemaBatalha.pdb
+C:\Users\Th\source\repos\CsharpOutros\sistemaBatalha\obj\Debug\net10.0\sistemaBatalha.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Th\source\repos\CsharpOutros\sistemaBatalha\obj\Debug\net10.0\sistemaBatalha.AssemblyInfoInputs.cache
+C:\Users\Th\source\repos\CsharpOutros\sistemaBatalha\obj\Debug\net10.0\sistemaBatalha.AssemblyInfo.cs
+C:\Users\Th\source\repos\CsharpOutros\sistemaBatalha\obj\Debug\net10.0\sistemaBatalha.csproj.CoreCompileInputs.cache
+C:\Users\Th\source\repos\CsharpOutros\sistemaBatalha\obj\Debug\net10.0\sistemaBatalha.sourcelink.json
+C:\Users\Th\source\repos\CsharpOutros\sistemaBatalha\obj\Debug\net10.0\sistemaBatalha.dll
+C:\Users\Th\source\repos\CsharpOutros\sistemaBatalha\obj\Debug\net10.0\refint\sistemaBatalha.dll
+C:\Users\Th\source\repos\CsharpOutros\sistemaBatalha\obj\Debug\net10.0\sistemaBatalha.pdb
+C:\Users\Th\source\repos\CsharpOutros\sistemaBatalha\obj\Debug\net10.0\sistemaBatalha.genruntimeconfig.cache
+C:\Users\Th\source\repos\CsharpOutros\sistemaBatalha\obj\Debug\net10.0\ref\sistemaBatalha.dll
