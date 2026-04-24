@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Th\\source\\repos\\CsharpOutros\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{84B2D829-A870-42A1-81CE-7242905F3C7D}|sistemaBatalha\\sistemaBatalha.csproj|c:\\users\\th\\source\\repos\\csharpoutros\\sistemabatalha\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84B2D829-A870-42A1-81CE-7242905F3C7D}|sistemaBatalha\\sistemaBatalha.csproj|solutionrelative:sistemabatalha\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84B2D829-A870-42A1-81CE-7242905F3C7D}|sistemaBatalha\\sistemaBatalha.csproj|c:\\users\\th\\source\\repos\\csharpoutros\\sistemabatalha\\entidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84B2D829-A870-42A1-81CE-7242905F3C7D}|sistemaBatalha\\sistemaBatalha.csproj|solutionrelative:sistemabatalha\\entidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Entidade.cs",
+              "DocumentMoniker": "C:\\Users\\Th\\source\\repos\\CsharpOutros\\sistemaBatalha\\Entidade.cs",
+              "RelativeDocumentMoniker": "sistemaBatalha\\Entidade.cs",
+              "ToolTip": "C:\\Users\\Th\\source\\repos\\CsharpOutros\\sistemaBatalha\\Entidade.cs",
+              "RelativeToolTip": "sistemaBatalha\\Entidade.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAAADwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-23T19:59:50.985Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Th\\source\\repos\\CsharpOutros\\sistemaBatalha\\Program.cs",
+              "RelativeDocumentMoniker": "sistemaBatalha\\Program.cs",
+              "ToolTip": "C:\\Users\\Th\\source\\repos\\CsharpOutros\\sistemaBatalha\\Program.cs",
+              "RelativeToolTip": "sistemaBatalha\\Program.cs",
+              "ViewState": "AgIAAIQBAAAAAAAAAAAcwI8BAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-23T19:40:28.571Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

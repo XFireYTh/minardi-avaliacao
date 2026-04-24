@@ -1,0 +1,14 @@
+C:\Users\Th\source\repos\CsharpOutros\Veiculo\bin\Debug\net10.0\Veiculoclass.exe
+C:\Users\Th\source\repos\CsharpOutros\Veiculo\bin\Debug\net10.0\Veiculoclass.deps.json
+C:\Users\Th\source\repos\CsharpOutros\Veiculo\bin\Debug\net10.0\Veiculoclass.runtimeconfig.json
+C:\Users\Th\source\repos\CsharpOutros\Veiculo\bin\Debug\net10.0\Veiculoclass.dll
+C:\Users\Th\source\repos\CsharpOutros\Veiculo\bin\Debug\net10.0\Veiculoclass.pdb
+C:\Users\Th\source\repos\CsharpOutros\Veiculo\obj\Debug\net10.0\Veiculoclass.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Th\source\repos\CsharpOutros\Veiculo\obj\Debug\net10.0\Veiculoclass.AssemblyInfoInputs.cache
+C:\Users\Th\source\repos\CsharpOutros\Veiculo\obj\Debug\net10.0\Veiculoclass.AssemblyInfo.cs
+C:\Users\Th\source\repos\CsharpOutros\Veiculo\obj\Debug\net10.0\Veiculoclass.csproj.CoreCompileInputs.cache
+C:\Users\Th\source\repos\CsharpOutros\Veiculo\obj\Debug\net10.0\Veiculoclass.dll
+C:\Users\Th\source\repos\CsharpOutros\Veiculo\obj\Debug\net10.0\refint\Veiculoclass.dll
+C:\Users\Th\source\repos\CsharpOutros\Veiculo\obj\Debug\net10.0\Veiculoclass.pdb
+C:\Users\Th\source\repos\CsharpOutros\Veiculo\obj\Debug\net10.0\Veiculoclass.genruntimeconfig.cache
+C:\Users\Th\source\repos\CsharpOutros\Veiculo\obj\Debug\net10.0\ref\Veiculoclass.dll
