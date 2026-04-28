@@ -1,4 +1,0 @@
-C:\Users\Th\source\repos\CsharpOutros\Veiculo\obj\Debug\net10.0\Veiculo.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Th\source\repos\CsharpOutros\Veiculo\obj\Debug\net10.0\Veiculo.AssemblyInfoInputs.cache
-C:\Users\Th\source\repos\CsharpOutros\Veiculo\obj\Debug\net10.0\Veiculo.AssemblyInfo.cs
-C:\Users\Th\source\repos\CsharpOutros\Veiculo\obj\Debug\net10.0\Veiculo.csproj.CoreCompileInputs.cache

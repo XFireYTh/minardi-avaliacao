@@ -9,14 +9,18 @@ namespace sistemaBatalha
     {
         public string Nome {  get; set; }
         public double Vida {  get; set; }
-        public int Pocoes {  get; set; }
+        public List<string> Pocoes {  get; set; }
         public bool Defesa { get; set; }
 
         public Entidade(string nome, int pocoes = 0)
         {
             Nome = nome;
             Vida = 100;
-            Pocoes = pocoes;
+            Pocoes = new List<string>();
+            for (int i = 0; i <= pocoes; i++)
+            {
+                Pocoes.Add("Cura");
+            }
             Defesa = false;
         }
 
@@ -140,6 +144,17 @@ namespace sistemaBatalha
                 
              
             }
+        }
+
+        public void Curar()
+        {
+            if (Pocoes.Count > 0)
+            {
+                Pocoes.Remove("Cura");
+                Vida += 20;
+                Console.WriteLine($"{Nome} Foi Curado");
+            }
+            else { Console.WriteLine($"{Nome} não possui poções no inventário"); }
         }
     }
 }

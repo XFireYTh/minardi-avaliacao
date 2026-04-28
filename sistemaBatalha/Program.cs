@@ -22,9 +22,9 @@ namespace sistemaBatalha
                 combatentes[0] = combatentes[0] == "" ? "Jogador" : combatentes[0];
                 Console.WriteLine($"\nSistema: Ok {combatentes[0]}, e quem você vai enfrentar hoje?\nSistema: Insira o nome do combatente rival/inimigo:");
                 combatentes[1] = Console.ReadLine();
-                combatentes[1] = combatentes[1] == "" ? "Jogador": combatentes[1];
+                combatentes[1] = combatentes[1] == "" ? "Jogador" : combatentes[1];
                 Console.WriteLine($"Sistema: Muito bem, agora vamos para a luta:\n\n----- {combatentes[0]} vs {combatentes[1]} -----\n\n-----   Que vença o melhor -----\n");
-                mandante = rndn.Next(0, 1);
+                mandante = rndn.Next(0, 2);
                 Console.WriteLine($"\nO primeiro a atacar é {combatentes[mandante]}\n");
                 int botDecision = 0;
                 int playerDecision = 0;
@@ -39,7 +39,7 @@ namespace sistemaBatalha
                     Console.WriteLine($"Turno de {combatentes[mandante]}");
                     if (mandante == 1)
                     {
-                        botDecision = rndn.Next(1, 4);
+                        botDecision = rndn.Next(1, 5);
                         Console.WriteLine($"{combatentes[mandante]} está pensando...\nDecisão tomada");
                         if (turnos == 1)
                         {
@@ -49,43 +49,43 @@ namespace sistemaBatalha
                             continue;
                         }
                         mandante--;
-                    } 
+                    }
                     else
                     {
-                        Console.WriteLine($"Digite sua opção:\n   1- Ataque\n   2- Defesa\n   3- Curar\n");
+                        Console.WriteLine($"\nDigite sua opção:\n   1- Ataque\n   2- Defesa\n   3- Curar\n");
                         if (int.TryParse(Console.ReadLine(), out int option))
                         {
                             switch (option)
                             {
                                 case 1:
-                                    Console.WriteLine("Força do ataque:\n   1- Leve - 100% de Acerto - 5 a 10 de Dano\n   2- Médio - 80% de Acerto - 10 a 20 de Dano\n   3- Forte - 50% de Acerto - 20 a 30 de Dano\n");
-                                    if (int.TryParse(Console.ReadLine(),out int optAtk))
+                                    Console.WriteLine("\nForça do ataque:\n   1- Leve - 100% de Acerto - 5 a 10 de Dano\n   2- Médio - 80% de Acerto - 10 a 20 de Dano\n   3- Forte - 50% de Acerto - 20 a 30 de Dano\n");
+                                    if (int.TryParse(Console.ReadLine(), out int optAtk))
                                     {
                                         playerDecision = optAtk;
-                                        Console.WriteLine("Decisão registrada.");
+                                        Console.WriteLine("\nDecisão registrada.");
                                         break;
                                     }
                                     else
                                     {
-                                        Console.WriteLine("Insira uma entrada válida!");
-                                        break; 
+                                        Console.WriteLine("\nInsira uma entrada válida!");
+                                        break;
                                     }
 
                                 case 2:
-                                    Console.WriteLine("Você decidiu defender");
+                                    Console.WriteLine("\nVocê decidiu defender");
                                     playerDecision = 4;
                                     break;
 
                                 case 3:
                                     if (inventario[0] > 0)
                                     {
-                                        Console.WriteLine("Você decidiu Curar");
+                                        Console.WriteLine("\nVocê decidiu Curar");
                                         playerDecision = 5;
                                         break;
                                     }
-                                    Console.WriteLine("Você não possui poções em seu inventário");
+                                    Console.WriteLine("\nVocê não possui poções em seu inventário");
                                     break;
-                                default: Console.WriteLine("Digite uma opção váilda!"); break;
+                                default: Console.WriteLine("\nDigite uma opção váilda!"); break;
                             }
                             if (playerDecision != 0)
                             {
@@ -109,11 +109,15 @@ namespace sistemaBatalha
                     {
                         if (playerDecision == 4 && botDecision == 4)
                         {
-                            Console.WriteLine("Os dois decidiram defender.");
+                            Console.WriteLine("\nOs dois decidiram defender.");
                             playerDecision = 0;
                             botDecision = 0;
                             turnos = 1;
                             rodada++;
+                            if (vida[0] <= 0 || vida[1] <= 0)
+                            {
+                                break;
+                            }
                             Console.WriteLine($"\n Rodada {rodada}\n");
                             continue;
                         }
@@ -163,11 +167,18 @@ namespace sistemaBatalha
                                     break;
 
                                 case 5:
-                                    Console.WriteLine($"Decisão de {combatentes[mandante + 1]}: Curar\n");
-                                    Curar(combatentes, vida, inventario, mandante + 1);
+                                    Console.WriteLine($"Decisão de {combatentes[mandante]}: Curar\n");
+                                    Curar(combatentes, vida, inventario, mandante
+                                        );
                                     break;
                                 default: break;
                             }
+
+                            if (vida[0] <= 0 || vida[1] <= 0)
+                            {
+                                break;
+                            }
+
                             switch (botDecision)
                             {
                                 case 1:
@@ -185,7 +196,7 @@ namespace sistemaBatalha
                                 case 2:
                                     Console.WriteLine($"Decisão de {combatentes[mandante + 1]}: Ataque Médio\n");
                                     double danom = rndn.Next(10, 20);
-                                    if (botDecision == 4)
+                                    if (playerDecision == 4)
                                     {
                                         Console.WriteLine($"{combatentes[mandante]} decidiu defender e por isso sofrerá dano reduzido\n");
                                         AtaqueMedio(combatentes, vida, mandante, danom / 2);
@@ -197,7 +208,7 @@ namespace sistemaBatalha
                                 case 3:
                                     Console.WriteLine($"Decisão de {combatentes[mandante + 1]}: Ataque Forte\n");
                                     double danof = rndn.Next(20, 30);
-                                    if (botDecision == 4)
+                                    if (playerDecision == 4)
                                     {
                                         Console.WriteLine($"{combatentes[mandante]} decidiu defender e por isso sofrerá dano reduzido\n");
                                         AtaqueForte(combatentes, vida, mandante, danof / 2);
@@ -217,15 +228,19 @@ namespace sistemaBatalha
                             botDecision = 0;
                             turnos = 1;
                             rodada++;
+                            if (vida[0] <= 0 || vida[1] <= 0)
+                            {
+                                break;
+                            }
                             Console.WriteLine($"\n Rodada {rodada}\n");
                             ExibirDetalhes(combatentes, vida);
                             continue;
-                        } 
+                        }
 
                         else
                         // Aqui se aplica a mesma lógica, porém invertida, apenas apontando isso pois é muito texto
                         {
-                           
+
                             switch (botDecision)
                             {
                                 case 1:
@@ -233,7 +248,7 @@ namespace sistemaBatalha
                                     double dano = rndn.Next(5, 10);
                                     if (playerDecision == 4)
                                     {
-                                        Console.WriteLine($"{combatentes[mandante -1]} decidiu defender e por isso sofrerá dano reduzido\n");
+                                        Console.WriteLine($"{combatentes[mandante - 1]} decidiu defender e por isso sofrerá dano reduzido\n");
                                         AtaqueLeve(combatentes, vida, mandante - 1, dano / 2);
                                         break;
                                     }
@@ -271,11 +286,16 @@ namespace sistemaBatalha
                                 default: break;
                             }
 
+                            if (vida[0] <= 0 || vida[1] <= 0)
+                            {
+                                break;
+                            }
+
                             switch (playerDecision)
                             {
                                 case 1:
                                     Console.WriteLine($"Decisão de {combatentes[mandante - 1]}: Ataque Leve\n");
-                                    double dano = rndn.Next(5, 10);
+                                    double dano = rndn.Next(5, 11);
                                     if (botDecision == 4)
                                     {
                                         Console.WriteLine($"{combatentes[mandante]} decidiu defender e por isso sofrerá dano reduzido\n");
@@ -287,8 +307,8 @@ namespace sistemaBatalha
 
                                 case 2:
                                     Console.WriteLine($"Decisão de {combatentes[mandante - 1]}: Ataque Médio\n");
-                                    double danom = rndn.Next(10, 20);
-                                    if (playerDecision == 4)
+                                    double danom = rndn.Next(10, 21);
+                                    if (botDecision == 4)
                                     {
                                         Console.WriteLine($"{combatentes[mandante]} decidiu defender e por isso sofrerá dano reduzido\n");
                                         AtaqueMedio(combatentes, vida, mandante, danom / 2);
@@ -299,7 +319,7 @@ namespace sistemaBatalha
 
                                 case 3:
                                     Console.WriteLine($"Decisão de {combatentes[mandante - 1]}: Ataque Forte\n");
-                                    double danof = rndn.Next(20, 30);
+                                    double danof = rndn.Next(20, 31);
                                     if (botDecision == 4)
                                     {
                                         Console.WriteLine($"{combatentes[mandante]} decidiu defender e por isso sofrerá dano reduzido\n");
@@ -324,6 +344,10 @@ namespace sistemaBatalha
                             botDecision = 0;
                             turnos = 1;
                             rodada++;
+                            if (vida[0] <= 0 || vida[1] <= 0)
+                            {
+                                break;
+                            }
                             Console.WriteLine($"\n Rodada {rodada}\n");
                             ExibirDetalhes(combatentes, vida);
                             continue;
@@ -332,8 +356,8 @@ namespace sistemaBatalha
 
                 }
                 Console.WriteLine("\nPartida Finalizada");
-                if (vida[0] == 0) { Console.WriteLine($"{combatentes[0]} venceu!"); }
-                else { Console.WriteLine($"{combatentes[1]} venceu!"); }
+                if (vida[0] == 0) { Console.WriteLine($"{combatentes[1]} venceu!"); }
+                else { Console.WriteLine($"{combatentes[0]} venceu!"); }
                 ExibirDetalhes(combatentes, vida);
                 Console.WriteLine("Obrigado por jogar");
                 break;
@@ -344,40 +368,48 @@ namespace sistemaBatalha
         public static void AtaqueLeve(string[] jogadores, double[] status, int alvo, double dano)
         {
             status[alvo] -= dano;
-            if (status[alvo] < 0)
+            if (status[alvo] <= 0)
             {
                 status[alvo] = 0;
             }
-            Console.WriteLine($"{jogadores[alvo]} sofreu {dano} de dano");    
+            Console.WriteLine($"{jogadores[alvo]} sofreu {dano} de dano\n");
         }
-        
+
         public static void AtaqueMedio(string[] jogadores, double[] status, int alvo, double dano)
         {
             Random rand = new Random();
-            bool acerto = rand.Next(1, 100) > 80 ? false : true;
+            bool acerto = rand.Next(1, 101) > 80 ? false : true;
             if (acerto)
             {
                 status[alvo] -= dano;
-                Console.WriteLine($"{jogadores[alvo]} sofreu {dano} de dano");
+                Console.WriteLine($"{jogadores[alvo]} sofreu {dano} de dano\n");
             }
             else
             {
-                Console.WriteLine("O ataque falhou");
+                Console.WriteLine("O ataque falhou\n");
+            }
+            if (status[alvo] <= 0)
+            {
+                status[alvo] = 0;
             }
         }
 
         public static void AtaqueForte(string[] jogadores, double[] status, int alvo, double dano)
-        { 
+        {
             Random rand = new Random();
-            bool acerto = rand.Next(1, 100) > 50 ? false : true;
+            bool acerto = rand.Next(1, 101) > 50 ? false : true;
             if (acerto)
             {
                 status[alvo] -= dano;
-                Console.WriteLine($"{jogadores[alvo]} sofreu {dano} de dano");
+                Console.WriteLine($"{jogadores[alvo]} sofreu {dano} de dano\n");
             }
             else
             {
-                Console.WriteLine("O ataque falhou");
+                Console.WriteLine("O ataque falhou\n");
+            }
+            if (status[alvo] <= 0)
+            {
+                status[alvo] = 0;
             }
         }
 
@@ -396,7 +428,7 @@ namespace sistemaBatalha
             string barraVidaJ = string.Empty;
             string barraVidaI = string.Empty;
 
-            for (int i = 1; i <= vida[0]; i++)
+            for (int i = 1; i <= 100; i++)
             {
                 if (i % 5 == 0)
                 {
@@ -405,11 +437,15 @@ namespace sistemaBatalha
                         barraVidaJ += "[]";
                         continue;
                     }
-                    barraVidaJ += "--";
+                    else
+                    {
+                        barraVidaJ += "--";
+                    }
+
                 }
             }
 
-            for (int i = 1; i <= vida[1]; i++)
+            for (int i = 1; i <= 100; i++)
             {
                 if (i % 5 == 0)
                 {
@@ -418,17 +454,21 @@ namespace sistemaBatalha
                         barraVidaI += "[]";
                         continue;
                     }
-                    barraVidaI += "--";
+                    else
+                    {
+                        barraVidaI += "--";
+                    }
+
                 }
             }
 
-            Console.WriteLine("##################################_-STATUS-_#####################################");
+            Console.WriteLine("\n##################################_-STATUS-_#####################################");
             Console.WriteLine("----------#_Jogador_#-------------##_-VS-_##------------#_Inimigo_#--------------");
-            Console.WriteLine($"{jogadores[0]}                            {jogadores[1]}");
-            Console.WriteLine($"Vida: {vida[0]}                             Vida: {vida[1]}");
-            Console.WriteLine($"{barraVidaJ}                              {barraVidaI}\n");
+            Console.WriteLine($"{jogadores[0]}                                         {jogadores[1]}");
+            Console.WriteLine($"Vida: {vida[0]}                                       Vida: {vida[1]}");
+            Console.WriteLine($"{barraVidaJ}      {barraVidaI}\n");
 
 
-        } 
+        }
     }
 }
